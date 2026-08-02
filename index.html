@@ -302,10 +302,10 @@ function parseSheet(wb, sheetName){
   const ws = wb.Sheets[sheetName];
   if(!ws) return [];
   const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
-  // header row = index 1 (Excel row 2) -> στήλες C..P (index 2..15) = τουρνουά, index 16 = ΣΥΝΟΛΟ
+  // header row = index 1 (Excel row 2) -> στήλες C..Q (index 2..16) = τουρνουά, index 17 = ΣΥΝΟΛΟ
   const headerRow = rows[1] || [];
   const tournamentNames = [];
-  for(let c = 2; c <= 15; c++){
+  for(let c = 2; c <= 16; c++){
     let h = (headerRow[c] || '').toString();
     h = h.split(' (')[0].trim();
     tournamentNames.push(h);
