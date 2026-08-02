@@ -22,6 +22,14 @@
     --muted:rgba(15,50,82,0.66);
     --neg:#E8622C;
   }
+  body.women-theme{
+    --navy:#a3175e;
+    --navy-deep:#7a1046;
+    --navy-light:#c93f83;
+    --orange:#a3175e;
+    --orange-dim:#7a1046;
+    --orange-light:#f3aecd;
+  }
   *{box-sizing:border-box;}
   body{
     margin:0;
@@ -347,6 +355,7 @@ function parseSheet(wb, sheetName){
 
 function switchTab(tab){
   currentTab = tab;
+  document.body.classList.toggle('women-theme', tab==='WOMEN');
   document.getElementById('tabMen').classList.toggle('active', tab==='MEN');
   document.getElementById('tabWomen').classList.toggle('active', tab==='WOMEN');
   document.getElementById('listTitle').textContent = 'Πλήρης Κατάταξη — ' + (tab==='MEN' ? 'Άνδρες' : 'Γυναίκες');
